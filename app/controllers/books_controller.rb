@@ -9,11 +9,11 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = current_user_books.build
+    @book = current_user.books.build
   end
 
   def create
-    @book = current_user_books.build(book_params)
+    @book = current_user.books.build(book_params)
 
     if @book.save
       redirect_to root_path
